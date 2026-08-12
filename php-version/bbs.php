@@ -26,12 +26,12 @@ try{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>簿記なんでも掲示板｜簿記ペディア</title>
+    <title>WEBなんでも掲示板｜コードペディア</title>
     <link rel="stylesheet" href="./bbs.css">
 </head>
 <body>
     <header>
-        <h1>簿記なんでも掲示板</h1>
+        <h1>WEBなんでも掲示板</h1>
     </header>
 
     <noscript>
@@ -44,12 +44,12 @@ try{
 
             <div class="accordion">
                 <div class="accordion-title search">
-                    <h3>記事の検索</h3><img src="./image/button-plus.png" alt="">
+                    <h3>投稿の検索</h3><img src="./image/button-plus.png" alt="">
                 </div>
                     <div class="accordion-body search-open">
                         <form action="bbs.php" method="GET">
                             <p>次の項目を入力し、「検索」ボタンをクリックしてください。</p>
-                            <input type="text" name="keyword">をメッセージに含む記事<br>
+                            <input type="text" name="keyword">をメッセージに含む投稿<br>
                             <button type="submit">検索</button>
                         </form>
                     </div>
@@ -57,7 +57,7 @@ try{
 
             <div class="accordion">
                 <div class="accordion-title write">
-                    <h3>新規記事の書き込み</h3><img src="./image/button-plus.png" alt="">
+                    <h3>新規書き込み</h3><img src="./image/button-plus.png" alt="">
                 </div>
                     <div class="accordion-body write-open">
                         <form action="bbs_insert.php" method="POST">
@@ -66,16 +66,16 @@ try{
                                     <input type="text" name="username" required><br>
                                 <span class="form-label-write">カテゴリ</span>
                                     <select name="category" id="category" autocomplete="off">
-                                        <option value="1級">1級</option>
-                                        <option value="2級">2級</option>
-                                        <option value="3級">3級</option>
+                                        <option value="初級">初級</option>
+                                        <option value="中級">中級</option>
+                                        <option value="上級">上級</option>
                                     </select><br>
                                 <span class="form-label-write">サブカテゴリ</span>
                                     <select name="subCategory" id="subCategory">
-                                        <option value="商業簿記">商業簿記</option>
-                                        <option value="会計学">会計学</option>
-                                        <option value="工業簿記">工業簿記</option>
-                                        <option value="原価計算">原価計算</option>
+                                        <option value="HTML・CSS">HTML・CSS</option>
+                                        <option value="JavaScript">JavaScript</option>
+                                        <option value="PHP・DB">PHP・DB</option>
+                                        <option value="環境構築">環境構築</option>
                                     </select><br>
                                 <span class="form-label-write">メッセージ</span>
                                     <input type="text" name="message" required><br>
@@ -86,12 +86,12 @@ try{
 
             <div class="accordion">
                 <div class="accordion-title delete">
-                    <h3>記事の削除（管理者専用）</h3><img src="./image/button-plus.png" alt="">
+                    <h3>投稿の削除（管理者専用）</h3><img src="./image/button-plus.png" alt="">
                 </div>
                     <div class="accordion-body delete-open">
                         <form action="bbs_delete.php" method="POST">
                             <p>次の項目を入力し、「削除」ボタンをクリックしてください。</p>
-                            <span class="form-label-delete">記事のID</span>
+                            <span class="form-label-delete">投稿のID</span>
                                 <input type="text" name="article-ID" pattern="[0-9]+" title="半角数字で入力してください" required><br>
                             <span class="form-label-delete">管理パスワード</span>
                                 <input type="password" name="password" pattern="[a-zA-Z0-9]{4,8}" title="半角英数字4文字以上8文字以下で入力してください" maxlength="8" required><br>
@@ -103,10 +103,10 @@ try{
         </div>
 
         <div class="article-list">
-            <h2>記事一覧</h2>
+            <h2>投稿一覧</h2>
                 <p class="term">検索条件:<?= $keyword === '' ? 'なし' : '' ?></p>
                 <?php if($keyword !== ''): ?>
-                <p>メッセージに<b><u><?= htmlspecialchars($keyword) ?></u></b>を含む記事</p>
+                <p>メッセージに<b><u><?= htmlspecialchars($keyword) ?></u></b>を含む投稿</p>
                 <?php endif; ?>
             
                 <?php if(empty($posts)): ?>
@@ -156,7 +156,7 @@ try{
                 <a href="index.html"><img src="./image/f-logo.png" alt="東京CPA会計学院ロゴ"></a>
 
                 <img src="./image/arrow-green.png" alt="">
-                <a href="#">学校の紹介はこちら</a>
+                <a href="#">グループの紹介</a>
                 <img src="./image/arrow-green.png" alt="">
                 <a href="#">利用規約</a>
                 <img src="./image/arrow-green.png" alt="">
@@ -164,7 +164,7 @@ try{
             </div>
             <div class="footer-right">
                 <a href="#">お問い合わせ</a>
-                <p>©CPA All Rights Reserved</p>
+                <p>©Codepedia All Rights Reserved</p>
             </div>
         </div>
     </footer>

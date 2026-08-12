@@ -2,23 +2,23 @@
 $category = $_GET['category'];
     
 switch($category){
-    case "1級":
+    case "初級":
         $subCategory = [
-            ["value" => "商業簿記", "label" => "商業簿記"],
-            ["value" => "会計学", "label" => "会計学"],
-            ["value" => "工業簿記", "label" => "工業簿記"],
-            ["value" => "原価計算", "label" => "原価計算"],
+            ["value" => "HTML・CSS", "label" => "HTML・CSS"],
+            ["value" => "JavaScript", "label" => "JavaScript"],
+            ["value" => "環境構築", "label" => "環境構築"]
         ];
         break;
-    case '2級':
+    case '中級':
         $subCategory = [
-            ['value' => '商業簿記', 'label' => '商業簿記'],
-            ['value' => '工業簿記', 'label' => '工業簿記'],
+            ['value' => 'JavaScript', 'label' => 'JavaScript'],
+            ['value' => 'PHP・DB', 'label' => 'PHP・DB']
         ];
         break;
-    case '3級':
+    case '上級':
         $subCategory = [
-            ['value' => '商業簿記', 'label' => '商業簿記']
+            ['value' => 'PHP・DB', 'label' => 'PHP・DB'],
+            ['value' => '環境構築', 'label' => '環境構築']
         ];
         break;
 }

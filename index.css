@@ -73,6 +73,7 @@ main{
         text-align: center;
         padding-bottom: 8px;
         color: rgb(78, 78, 78);
+        letter-spacing: 0.04em;
     }
     p{
         text-align: center;
@@ -97,7 +98,7 @@ main{
 
 footer{
     background-color: #f3f4f8;
-    color: rgb(103, 90, 246);
+    color: rgb(103, 90, 246, 0.85);
     flex-shrink: 0;
 }
     .footer-inner{
@@ -109,7 +110,6 @@ footer{
         box-sizing: border-box;
         margin: 0 auto;
         padding: 16px 24px;
-        font-size: 0.9rem;
     }
     footer a{
         color: rgb(103, 90, 246);
@@ -120,6 +120,7 @@ footer{
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+        font-size: 0.9rem;
     }
     .footer-links{
         display: flex;
@@ -149,13 +150,15 @@ footer{
         border-radius: 7px;
         margin-bottom: 10px;
         font-weight: 700;
+        color: rgb(103, 90, 246, 0.85);
     }
     .f-logo{
         font-weight: 700;
-        font-size: 20px;
-        color: rgba(103, 90, 246, 0.85);
+        font-size: 1.08rem;
+        color: rgb(103, 90, 246, 0.85);
         text-decoration: none;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
+        letter-spacing: 0.02em;
     }
 
 
