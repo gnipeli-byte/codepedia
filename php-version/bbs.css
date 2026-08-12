@@ -1,0 +1,274 @@
+@import "common.css";
+
+
+body{
+    font-family: "Kosugi Maru", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #f3f4f8;
+    padding: 14px 0;
+    border-top: 3px solid rgb(103, 90, 246);
+    border-bottom: 1px solid #e4e4e8;
+}
+.header-inner{
+    max-width: 1080px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+    h1 {
+        font-size: 1.5rem;
+        color: rgba(103, 90, 246, 0.83);
+    }
+
+main {
+    max-width: 1080px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto ;
+    padding: 0 24px 100px;
+    flex: 1 0 auto;
+}
+
+    h2{
+        font-size: 1.4rem;
+        margin: 20px 0 6px;
+        color: rgb(103, 90, 246);
+        /* padding-left: 3px; */
+    }
+
+.menu{
+    margin-top: 38px;
+}
+
+/* 共通スタイル */
+.accordion{
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(20,20,30,0.05), 0 4px 12px rgba(20,20,30,0.06);
+}
+    .accordion:last-child{
+        margin-bottom: 80px; /* 直後の「記事一覧」との間隔 */
+    }
+.accordion-title{
+    cursor: pointer;
+    color: white;
+    padding: 14px 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    transition: filter .15s ease;
+}
+    .accordion-title:hover{
+        filter: brightness(1.15);
+    }
+    .accordion-title .chevron{
+        width: 18px;
+        height: 18px;
+        transition: transform .25s ease;
+    }
+    .accordion-title.is-open .chevron{
+        transform: rotate(45deg);
+    }
+
+    /* 画像を個別に指定 */
+    .search{
+        background-color: rgb(103, 90, 246);
+        border-radius: 8px 8px 0 0;
+    }
+        .search-open{
+            background-color: #f3f4f8;
+            padding: 19px 31px 27px;
+            border-radius: 0 0 8px 8px;
+        }
+    .write{
+        background-color: rgb(103, 90, 246);
+        border-radius: 8px 8px 0 0;
+    }
+        .write-open{
+            background-color: #f3f4f8;
+            padding: 19px 31px 27px;
+            border-radius: 0 0 8px 8px;
+        }
+    .delete{
+        background-color: rgb(103, 90, 246);
+        border-radius: 8px 8px 0 0;
+    }
+        .delete-open{
+            background-color: #f3f4f8;
+            padding: 19px 31px 27px;
+        }
+    .form-label-write{
+        display: inline-block;
+        width: 96px;
+    }
+    .form-label-delete{
+        display: inline-block;
+        width: 112px;
+    }
+    input[type="text"],input[type="password"]{
+        width: 180px;
+        padding: 9px 12px;
+        margin: 6px 0 4px;
+        border: 1px solid #d8d8de;
+        border-radius: 6px;
+        background-color: #fff;
+        font-size: 14px;
+        transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    input[type="text"]:focus,input[type="password"]:focus{
+        outline: none;
+        border-color: rgb(103, 90, 246);
+        box-shadow: 0 0 0 2px rgba(103, 90, 246, 0.2);
+    }
+    select {
+        width: 205px;
+        padding: 9px 10px;
+        margin: 4px 0;
+        border: 1px solid #d8d8de;
+        border-radius: 6px;
+        background-color: #fff;
+        font-size: 14px;
+        transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    select:focus{
+        outline: none;
+        border-color: rgb(103, 90, 246);
+        box-shadow: 0 0 0 2px rgba(103, 90, 246, 0.2);
+    }
+    input[name="message"]{
+        width: 360px;
+    }
+    input[type="checkbox"]{
+        margin-left: 118px;
+        accent-color: rgb(103, 90, 246);
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+    }
+    button[type="submit"]{
+        padding: 9px 22px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 6px;
+        background-color: rgb(103, 90, 246);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: filter .15s ease;
+    }
+    button[type="submit"]:hover{
+        filter: brightness(1.15);
+    }
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+th{
+    border: none;
+    border-bottom: 2px solid #b7b7b7;
+    padding: 12px 16px;
+}
+td{
+    border: none;
+    border-bottom: 1px solid #ececec;
+    padding: 20px 16px;
+    text-align: center;
+    color: rgb(78, 78, 78);
+}
+td:nth-child(6) {text-align: justify;}
+thead, th{
+    background-color: rgb(103, 90, 246);
+    color: white;
+}
+th:nth-child(1) { width: 7%; }   /* ID */
+th:nth-child(2) { width: 20%; }  /* 投稿日時 */
+th:nth-child(3) { width: 17%; }  /* お名前 */
+th:nth-child(4) { width: 12%; }  /* カテゴリ */
+th:nth-child(5) { width: 13%; }  /* サブカテゴリ */
+th:nth-child(6) { width: 31%; }  /* メッセージ */
+/* tbody{
+    text-align: center;
+} */
+    .term{
+        margin-bottom: 15px;
+        padding-left: 3px;
+        font-size: 0.8rem;
+        color: rgb(78, 78, 78);
+    }
+
+footer{
+    background-color: #f3f4f8;
+    color: rgb(103, 90, 246);
+    flex-shrink: 0;
+}
+    .footer-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1080px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 16px 24px;
+    }
+    footer a{
+        color: rgb(103, 90, 246);
+        text-decoration: none;
+    }
+    .footer-left{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .footer-links{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .footer-links a::after{
+        content: '';
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        margin-left: 10px;
+    }
+    .footer-links a:last-child::after{
+        display: none;
+    }
+    .footer-right{
+        text-align: right;
+        color: rgb(78, 78, 78);
+    }
+    .footer-right a{
+        display: inline-block;
+        padding: 10px 26px;
+        background-color: rgba(103, 90, 246, 0.225);
+        border-radius: 7px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    .f-logo{
+        font-weight: 700;
+        font-size: 20px;
+        color: rgb(103, 90, 246);
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
