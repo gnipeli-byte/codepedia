@@ -14,9 +14,10 @@ header{
 }
     h1{
         text-align: center;
-        font-size: 2.4rem;
+        font-size: 2.6rem;
         color: rgba(103, 90, 246, 0.85);
-        letter-spacing: 0.02em;
+        letter-spacing: -0.02em;
+        font-family: "IBM Plex Sans", sans-serif;
     }
 
 main{
