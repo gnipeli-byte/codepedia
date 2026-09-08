@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="header-inner">
@@ -23,87 +25,100 @@
     </noscript>
 
     <main>
-        <div class="menu">
+        <section class="menu">
             <!-- <h2>メニュー</h2> -->
 
-            <div class="accordion">
+            <section class="accordion">
                 <div class="accordion-title search">
-                    投稿の検索<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    投稿の検索<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
                 </div>
-                    <div class="accordion-body search-open">
-                        <form action="#">
-                            <p>次の項目を入力し、「検索」ボタンをクリックしてください。</p>
-                            <input type="text" name="keyword">をメッセージに含む投稿<br>
-                            <button type="submit">検索</button>
-                        </form>
-                    </div>
-            </div>
+                <div class="accordion-body search-open">
+                    <form action="#">
+                        <p>次の項目を入力し、「検索」ボタンをクリックしてください。</p>
+                        <input type="text" name="keyword">をメッセージに含む投稿<br>
+                        <button type="submit">検索</button>
+                    </form>
+                </div>
+            </section>
 
-            <div class="accordion">
+            <section class="accordion">
                 <div class="accordion-title write">
-                    新規書き込み<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    新規書き込み<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
                 </div>
-                    <div class="accordion-body write-open">
-                        <form action="#">
-                            <p>次の項目を入力し、「書き込む」ボタンをクリックしてください。</p>
-                                <span class="form-label-write">お名前</span>
-                                    <input type="text" name="username" required><br>
-                                <span class="form-label-write">カテゴリ</span>
-                                    <select name="category" id="category" autocomplete="off">
-                                        <option value="初級">初級</option>
-                                        <option value="中級">中級</option>
-                                        <option value="上級">上級</option>
-                                    </select><br>
-                                <span class="form-label-write">サブカテゴリ</span>
-                                    <select name="subCategory" id="subCategory">
-                                        <option value="HTML・CSS">HTML・CSS</option>
-                                        <option value="JavaScript">JavaScript</option>
-                                        <option value="PHP・DB">PHP・DB</option>
-                                        <option value="環境構築">環境構築</option>
-                                    </select><br>
-                                <span class="form-label-write">メッセージ</span>
-                                    <input type="text" name="message" required><br>
-                                <button type="submit">書き込む</button>
-                        </form>
-                    </div>
-            </div>
+                <div class="accordion-body write-open">
+                    <form action="#">
+                        <p>次の項目を入力し、「書き込む」ボタンをクリックしてください。</p>
+                        <span class="form-label-write">お名前</span>
+                        <input type="text" name="username" required><br>
+                        <span class="form-label-write">カテゴリ</span>
+                        <select name="category" id="category" autocomplete="off">
+                            <option value="初級">初級</option>
+                            <option value="中級">中級</option>
+                            <option value="上級">上級</option>
+                        </select><br>
+                        <span class="form-label-write">サブカテゴリ</span>
+                        <select name="subCategory" id="subCategory">
+                            <option value="HTML・CSS">HTML・CSS</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="PHP・DB">PHP・DB</option>
+                            <option value="環境構築">環境構築</option>
+                        </select><br>
+                        <span class="form-label-write">メッセージ</span>
+                        <input type="text" name="message" required><br>
+                        <button type="submit">書き込む</button>
+                    </form>
+                </div>
+            </section>
 
-            <div class="accordion">
+            <section class="accordion">
                 <div class="accordion-title delete">
-                    投稿の削除（管理者専用）<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    投稿の削除（管理者専用）<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
                 </div>
-                    <div class="accordion-body delete-open">
-                        <form action="#">
-                            <p>次の項目を入力し、「削除」ボタンをクリックしてください。</p>
-                            <span class="form-label-delete">投稿のID</span>
-                                <input type="text" name="article-ID" pattern="[0-9]+" title="半角数字で入力してください" required><br>
-                            <span class="form-label-delete">管理パスワード</span>
-                                <input type="password" name="password" pattern="[a-zA-Z0-9]{4,8}" title="半角英数字4文字以上8文字以下で入力してください" maxlength="8" required><br>
-                            <input type="checkbox" id="showPassword"><label for="showPassword">パスワードの表示</label><br>
-                            <button type="submit">削除</button>
-                        </form>
-                    </div>
-            </div>
-        </div>
+                <div class="accordion-body delete-open">
+                    <form action="#">
+                        <p>次の項目を入力し、「削除」ボタンをクリックしてください。</p>
+                        <span class="form-label-delete">投稿のID</span>
+                        <input type="text" name="article-ID" pattern="[0-9]+" title="半角数字で入力してください" required><br>
+                        <span class="form-label-delete">管理パスワード</span>
+                        <input type="password" name="password" pattern="[a-zA-Z0-9]{4,8}"
+                            title="半角英数字4文字以上8文字以下で入力してください" maxlength="8" required><br>
+                        <input type="checkbox" id="showPassword"><label for="showPassword">パスワードの表示</label><br>
+                        <button type="submit">削除</button>
+                    </form>
+                </div>
+            </section>
+        </section>
 
-        <div class="article-list">
+        <section class="article-list">
             <h2>投稿一覧</h2>
             <p class="term">検索条件:なし</p>
 
             <div class="table-scroll">
                 <table class="submissions">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>投稿日時</th>
-                        <th>お名前</th>
-                        <th>カテゴリ</th>
-                        <th>サブカテゴリ</th>
-                        <th>メッセージ</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>投稿日時</th>
+                            <th>お名前</th>
+                            <th>カテゴリ</th>
+                            <th>サブカテゴリ</th>
+                            <th>メッセージ</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <!-- <tr>
+                        <!-- <tr>
                         <td>042</td>
                         <td>2026-06-20 16:20:25</td>
                         <td>ヤマヨシ</td>
@@ -122,12 +137,12 @@
                     </tbody>
                 </table>
             </div>
-            
-        </div>
+
+        </section>
     </main>
 
     <footer>
-         <div class="footer-inner">
+        <div class="footer-inner">
             <div class="footer-left">
                 <a href="index.html" class="f-logo">関東WEB愛好者グループ</a>
                 <nav class="footer-links">
@@ -146,4 +161,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="bbs-pseudo.js"></script>
 </body>
+
 </html>
