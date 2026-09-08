@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    padding: 20px 0 40px;
+    padding: 20px 0 56px;
 }
 
 h1 {
@@ -199,11 +199,11 @@ footer a {
 /* スマホ */
 @media (max-width: 640px) {
     header {
-        padding: 16px 0 24px;
+        padding: 16px 0 38px;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 2.5rem;
     }
 
     .card-list {
