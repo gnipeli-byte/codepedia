@@ -1,6 +1,6 @@
 @import "common.css";
 
-body{
+body {
     font-family: "Kosugi Maru", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -9,22 +9,23 @@ body{
     flex-direction: column;
 }
 
-header{
+header {
     padding: 20px 0 40px;
 }
-    h1{
-        text-align: center;
-        font-size: 2.6rem;
-        color: rgba(103, 90, 246, 0.85);
-        letter-spacing: -0.02em;
-        font-family: "IBM Plex Sans", sans-serif;
-    }
 
-main{
+h1 {
+    text-align: center;
+    font-size: 2.9rem;
+    color: rgba(103, 90, 246, 0.85);
+    letter-spacing: -0.02em;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+main {
     flex: 1 0 auto;
 }
 
-.card-list{
+.card-list {
     display: flex;
     flex-wrap: wrap;
     max-width: 1080px;
@@ -34,179 +35,204 @@ main{
     margin: 40px auto 130px;
     gap: 38px 38px;
 }
-.card{
+
+.card {
     background-color: white;
     border-radius: 14px;
     border: 1px solid #ebebef;
-    box-shadow: 0 1px 2px rgba(20,20,30,0.04), 0 8px 24px rgba(20,20,30,0.06);
+    box-shadow: 0 1px 2px rgba(20, 20, 30, 0.04), 0 8px 24px rgba(20, 20, 30, 0.06);
     width: calc(50% - 19px);
     padding: 28px 24px;
     text-align: center;
     box-sizing: border-box;
     transition: transform .15s ease, box-shadow .15s ease;
 }
-    .card:hover{
-        transform: translateY(-3px);
-        box-shadow: 0 2px 4px rgba(20,20,30,0.06), 0 14px 32px rgba(20,20,30,0.10);
-    }
-    .card-icon{
-        width: 32px;
-        height: 32px;
-        color: rgb(103, 90, 246);
-        padding: 12px;
-        background-color: rgba(103, 90, 246, 0.1);
-        border-radius: 12px;
-        margin: 0 auto 14px;
-        display: block;
-        box-sizing: content-box;
-    }
-    .card-tag{
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 700;
-        padding: 3px 10px;
-        border-radius: 999px;
-        background-color: rgba(103, 90, 246, 0.1);
-        color: rgb(103, 90, 246);
-        margin-bottom: 16px;
-    }
-    h2{
-        text-align: center;
-        padding-bottom: 8px;
-        color: rgb(78, 78, 78);
-        letter-spacing: 0.04em;
-    }
-    p{
-        text-align: center;
-        line-height: 1.5;
-        padding-top: 12px;
-        color: rgb(78, 78, 78);
-    }
-    .card a{
-        display: inline-block;
-        padding: 9px 24px;
-        margin: 18px 0 6px;
-        background-color: rgba(103, 90, 246, 0.85);
-        border-radius: 8px;
-        color: white;
-        /* text-align: center; */
-        text-decoration: none;
-        transition: background-color .15s ease;
-    }
-    .card a:hover{
-        background-color: rgb(83, 70, 220, 0.85);
-    }
 
-footer{
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(20, 20, 30, 0.06), 0 14px 32px rgba(20, 20, 30, 0.10);
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+    color: rgb(103, 90, 246);
+    padding: 12px;
+    background-color: rgba(103, 90, 246, 0.1);
+    border-radius: 12px;
+    margin: 0 auto 14px;
+    display: block;
+    box-sizing: content-box;
+}
+
+.card-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: rgba(103, 90, 246, 0.1);
+    color: rgb(103, 90, 246);
+    margin-bottom: 16px;
+    letter-spacing: 0.08em;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 8px;
+    color: rgb(78, 78, 78);
+    letter-spacing: 0.04em;
+}
+
+p {
+    text-align: center;
+    line-height: 1.5;
+    padding-top: 12px;
+    color: rgb(78, 78, 78);
+}
+
+.card a {
+    display: inline-block;
+    padding: 9px 24px;
+    margin: 18px 0 6px;
+    background-color: rgba(103, 90, 246, 0.85);
+    border-radius: 8px;
+    color: white;
+    /* text-align: center; */
+    text-decoration: none;
+    transition: background-color .15s ease;
+}
+
+.card a:hover {
+    background-color: rgb(83, 70, 220, 0.85);
+}
+
+footer {
     background-color: #f3f4f8;
     color: rgb(103, 90, 246, 0.85);
     flex-shrink: 0;
 }
-    .footer-inner{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1080px;
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0 auto;
-        padding: 16px 24px;
-    }
-    footer a{
-        color: rgb(103, 90, 246);
-        text-decoration: none;
-    }
-    .footer-left{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        font-size: 0.9rem;
-    }
-    .footer-links{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .footer-links a::after{
-        content: '';
-        display: inline-block;
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.5);
-        margin-left: 10px;
-    }
-    .footer-links a:last-child::after{
-        display: none;
-    }
-    .footer-right{
-        text-align: right;
-        color: rgb(78, 78, 78);
-    }
-    .footer-right a{
-        display: inline-block;
-        padding: 10px 26px;
-        background-color: rgba(103, 90, 246, 0.225);
-        border-radius: 7px;
-        margin-bottom: 10px;
-        font-weight: 700;
-        color: rgb(103, 90, 246, 0.85);
-    }
-    .f-logo{
-        font-weight: 700;
-        font-size: 1.08rem;
-        color: rgb(103, 90, 246, 0.85);
-        text-decoration: none;
-        padding-bottom: 10px;
-        letter-spacing: 0.02em;
-    }
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 16px 24px;
+}
+
+footer a {
+    color: rgb(103, 90, 246);
+    text-decoration: none;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin-left: 10px;
+}
+
+.footer-links a:last-child::after {
+    display: none;
+}
+
+.footer-right {
+    text-align: right;
+    color: rgb(78, 78, 78);
+}
+
+.footer-right a {
+    display: inline-block;
+    padding: 10px 26px;
+    background-color: rgba(103, 90, 246, 0.225);
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: rgb(103, 90, 246, 0.85);
+}
+
+.f-logo {
+    font-weight: 700;
+    font-size: 1.08rem;
+    color: rgb(103, 90, 246, 0.85);
+    text-decoration: none;
+    padding-bottom: 10px;
+    letter-spacing: 0.02em;
+}
 
 
 
 /* タブレット〜小さめPC:カードを1列に */
-@media (max-width: 860px){
-    .card-list{
+@media (max-width: 860px) {
+    .card-list {
         max-width: 640px;
         margin: 32px auto 60px;
         gap: 20px;
     }
-    .card{
+
+    .card {
         width: 100%;
     }
 }
 
 /* スマホ */
-@media (max-width: 640px){
-    header{
+@media (max-width: 640px) {
+    header {
         padding: 16px 0 24px;
     }
-    h1{
+
+    h1 {
         font-size: 1.6rem;
     }
-    .card-list{
+
+    .card-list {
         padding: 0 16px;
     }
-    .card{
+
+    .card {
         padding: 20px 18px;
     }
 
-    .footer-inner{
+    .footer-inner {
         flex-direction: column;
         align-items: flex-start;
         gap: 14px;
         padding: 24px 16px;
         font-size: 0.9rem;
     }
-    .footer-links{
+
+    .footer-links {
         flex-wrap: wrap;
         row-gap: 6px;
     }
-    .footer-right{
+
+    .footer-right {
         width: 100%;
         text-align: left;
     }
-    .footer-right p{
+
+    .footer-right p {
         margin-top: 10px;
         text-align: center;
         font-size: 12px;
