@@ -5,7 +5,7 @@
 
 ## デモ
 
-GitHub Pagesで公開中: (公開後にURLをここに貼る)
+GitHub Pagesで公開中: gnipeli-byte.github.io/codepedia/
 
 ## 技術スタック
 
