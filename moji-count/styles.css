@@ -257,7 +257,7 @@ main,
 .hero {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 28px 24px 8px;
+    padding: 18px 24px 4px;
 }
 
 .kicker {
@@ -526,12 +526,19 @@ textarea::placeholder {
     color: #fff;
 }
 
-.toast {
-    min-height: 1.2em;
+.toast:not(:empty) {
+    display: inline-block;
     margin-top: 10px;
+    padding: 8px 14px;
+    background: var(--ink);
+    color: var(--sun);
+    border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--periwinkle);
+}
+
+.toast:empty {
+    display: none;
 }
 
 .scoreboard {
@@ -766,6 +773,30 @@ textarea::placeholder {
     .live-pill {
         font-size: 0.72rem;
         padding: 6px 10px;
+    }
+
+    .editor-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .toolbar-controls {
+        width: 100%;
+    }
+
+    .chip-toggle {
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    .limit-field {
+        flex: 1;
+        display: flex;
+    }
+
+    .limit-field select {
+        width: 100%;
     }
 
     textarea {

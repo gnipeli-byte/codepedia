@@ -156,7 +156,7 @@ function showToast(message) {
     window.clearTimeout(showToast.timer);
     showToast.timer = window.setTimeout(() => {
         toast.textContent = "";
-    }, 1800);
+    }, 2800);
 }
 
 copyBtn.addEventListener("click", async () => {
@@ -167,7 +167,12 @@ copyBtn.addEventListener("click", async () => {
     }
     try {
         await navigator.clipboard.writeText(text);
+        copyBtn.textContent = "コピーした";
         showToast("コピーした。持っていって。");
+        window.clearTimeout(copyBtn._reset);
+        copyBtn._reset = window.setTimeout(() => {
+            copyBtn.textContent = "コピー";
+        }, 1600);
     } catch {
         draft.select();
         showToast("コピーできなかったので、選択したよ。");
