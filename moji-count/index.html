@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>もじもじ — かんたん文字カウント</title>
+    <meta name="description" content="打った瞬間に文字数がはねる、かんたん文字カウント。単語・行・バイトもその場で。">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="atmosphere" aria-hidden="true">
+        <span class="blob blob-a"></span>
+        <span class="blob blob-b"></span>
+        <span class="blob blob-c"></span>
+        <span class="sticker sticker-star">★</span>
+        <span class="sticker sticker-mo">も</span>
+        <span class="sticker sticker-ji">字</span>
+        <span class="grain"></span>
+    </div>
+
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">も</span>
+            <span class="brand-text">
+                <strong>もじもじ</strong>
+                <small>character playground</small>
+            </span>
+        </a>
+        <p class="live-pill">
+            <span class="live-dot" aria-hidden="true"></span>
+            リアルタイム集計
+        </p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="kicker">かんたん文字カウント</p>
+            <h1>
+                打った瞬間、<br>
+                <span class="hero-accent">数字がはねる。</span>
+            </h1>
+            <p class="lede">
+                下書きも、投稿も、原稿も。文字・単語・行・バイトをいまこの場で。
+                サーバーには送りません。消えたらそれまで、気軽にどうぞ。
+            </p>
+        </section>
+
+        <section class="stage" aria-label="文字カウント">
+            <div class="editor-card">
+                <div class="editor-toolbar">
+                    <label class="field-label" for="draft">本文</label>
+                    <div class="toolbar-controls">
+                        <label class="chip-toggle">
+                            <input type="checkbox" id="ignore-spaces">
+                            <span>空白をのぞく</span>
+                        </label>
+                        <label class="limit-field">
+                            <span class="sr-only">文字数の上限</span>
+                            <select id="limit" aria-label="文字数の上限">
+                                <option value="0">上限なし</option>
+                                <option value="140">140（短文）</option>
+                                <option value="280">280（ポスト）</option>
+                                <option value="1000">1000（ブログ下書き）</option>
+                                <option value="4000">4000（長文）</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <textarea
+                    id="draft"
+                    name="draft"
+                    rows="9"
+                    maxlength="200000"
+                    placeholder="今日は何文字書く？ ここにペタッと貼ってもOK。"
+                    spellcheck="true"
+                ></textarea>
+
+                <div class="progress-wrap" hidden>
+                    <div class="progress-track" aria-hidden="true">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <p class="progress-caption" id="progress-caption"></p>
+                </div>
+
+                <div class="editor-actions">
+                    <button type="button" class="btn btn-ghost" id="sample-btn">おためし文章</button>
+                    <div class="editor-actions-right">
+                        <button type="button" class="btn btn-ghost" id="clear-btn">クリア</button>
+                        <button type="button" class="btn btn-solid" id="copy-btn">コピー</button>
+                    </div>
+                </div>
+                <p class="toast" id="toast" role="status" aria-live="polite"></p>
+            </div>
+
+            <aside class="scoreboard" aria-label="集計結果">
+                <div class="buddy-row">
+                    <div class="buddy" id="buddy" data-mood="idle" aria-hidden="true">
+                        <svg viewBox="0 0 88 88" fill="none">
+                            <circle class="buddy-body" cx="44" cy="44" r="38"/>
+                            <ellipse class="buddy-blush" cx="24" cy="50" rx="7" ry="4"/>
+                            <ellipse class="buddy-blush" cx="64" cy="50" rx="7" ry="4"/>
+                            <circle class="buddy-eye left" cx="32" cy="40" r="5.5"/>
+                            <circle class="buddy-eye right" cx="56" cy="40" r="5.5"/>
+                            <path class="buddy-mouth" d="M34 58c4 7 16 7 20 0"/>
+                        </svg>
+                    </div>
+                    <p class="buddy-line" id="buddy-line">まだゼロ。書いてみて。</p>
+                </div>
+
+                <div class="stat stat-hero">
+                    <p class="stat-label">もじ</p>
+                    <p class="stat-value" id="char-count" aria-live="polite">0</p>
+                    <p class="stat-note" id="char-note">grapheme / 見た目の1文字</p>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat">
+                        <p class="stat-label">ことば</p>
+                        <p class="stat-value" id="word-count">0</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-label">ぎょう</p>
+                        <p class="stat-value" id="line-count">0</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-label">ばいと</p>
+                        <p class="stat-value" id="byte-count">0</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-label" id="remain-label">あまり</p>
+                        <p class="stat-value" id="remain-count">∞</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="perks" aria-label="このページでできること">
+            <article class="perk">
+                <span class="perk-badge" aria-hidden="true">1</span>
+                <h2>絵文字も、だいたい1文字。</h2>
+                <p>👨‍👩‍👧‍👦 みたいな結合文字は、できるだけ見た目どおりに数えます。原稿の「見た目の長さ」に近いカウントです。</p>
+            </article>
+            <article class="perk">
+                <span class="perk-badge" aria-hidden="true">2</span>
+                <h2>上限を先に決めておく。</h2>
+                <p>短文・ポスト・ブログ下書き。枠を選ぶとゲージがにょきっと伸びて、はみ出しそうなときに色が変わります。</p>
+            </article>
+            <article class="perk">
+                <span class="perk-badge" aria-hidden="true">3</span>
+                <h2>その場かぎり。残しません。</h2>
+                <p>入力はブラウザの中だけ。コピーして持っていくもよし、クリアして消すもよし。下書き置き場ではありません。</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>もじもじ — 文字と、ちょっと遊ぶ。</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
