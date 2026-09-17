@@ -10,7 +10,7 @@ GitHub Pagesで公開中: gnipeli-byte.github.io/codepedia/
 ## 技術スタック
 
 - HTML / CSS / JavaScript (jQuery)
-- レスポンシブ対応なし版・アコーディオンUI(CSSトランジション)
+- アコーディオンUI(CSSトランジション)
 - 投稿の書き込み・検索・削除機能(フロントエンドのみで完結、配列操作で実装)
 
 ## PHP / MySQL版について
