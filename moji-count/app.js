@@ -121,7 +121,7 @@ function update() {
 
     charNote.textContent = skipSpaces
         ? "空白をのぞいた見た目の文字"
-        : "grapheme / 見た目の1文字";
+        : "見た目の1文字でカウント";
 
     wordCount.textContent = formatNumber(words);
     lineCount.textContent = formatNumber(lines);
